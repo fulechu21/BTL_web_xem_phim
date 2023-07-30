@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CountryController;
+use App\Http\Controllers\Admin\FilmController;
 
 use \App\Http\Controllers\Admin\DashboardController;
 
@@ -30,7 +31,7 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function () {
     });
 
     Route::prefix('film')->group(function () {
-        Route::get('/', [FilmController::class, 'list'])->name('admin.film.list');
+        Route::get('/', [\App\Http\Controllers\Admin\FilmController::class, 'list'])->name('admin.film.list');
         Route::get('create', [FilmController::class, 'create'])->name('admin.film.create');
         Route::post('/do-create', [FilmController::class, 'doCreate'])->name('admin.film.do-create');
         Route::get('/edit/{id}', [FilmController::class, 'edit'])->name('admin.film.edit');
