@@ -29,5 +29,14 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function () {
         Route::get('/delete/{id}', [CountryController::class, 'delete'])->name('admin.country.delete');
     });
 
+    Route::prefix('film')->group(function () {
+        Route::get('/', [FilmController::class, 'list'])->name('admin.film.list');
+        Route::get('create', [FilmController::class, 'create'])->name('admin.film.create');
+        Route::post('/do-create', [FilmController::class, 'doCreate'])->name('admin.film.do-create');
+        Route::get('/edit/{id}', [FilmController::class, 'edit'])->name('admin.film.edit');
+        Route::post('/do-edit/{id}', [FilmController::class, 'doEdit'])->name('admin.film.do-edit');
+        Route::get('/delete/{id}', [FilmController::class, 'delete'])->name('admin.film.delete');
+    });
+
 });
 ?>
