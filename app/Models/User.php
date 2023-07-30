@@ -41,4 +41,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function films()
+    {
+        return $this->belongsToMany(Film::class, 'user_films', 'user_id', 'film_id');
+    }
+
+    public function isAdmin()
+    {
+        return $this->is_admin == '1';
+    }
 }
