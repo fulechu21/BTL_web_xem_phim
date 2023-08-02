@@ -9,6 +9,7 @@ use App\Models\Country;
 use App\Models\Director;
 use App\Models\Film;
 use App\Models\User;
+use App\Models\UserFilm;
 use http\Env\Request;
 use Illuminate\Support\Facades\Auth;
 use function GuzzleHttp\Promise\all;
@@ -123,6 +124,40 @@ class FilmController extends Controller
         }
     }
 
+    public function addFilmFavorite(\Illuminate\Http\Request $request)
+    {
+        if ($request->has('film_id')) {
+            if (auth()->check()) {
+                $user = auth()->user();
+                $filmId = $request->input('film_id');
 
+                // Kiểm tra xem phim đã được thêm vào yêu thích của người dùng hay chưa
+                if ($user->films()->where('films.id', $filmId)->exists()) {
+                    return redirect()->back()->with('error', 'Phim đã được thêm vào yêu thích');
+                }
 
+                $user_film = new UserFilm;
+                $user_film->film_id =  $filmId;
+                $user_film->user_id = $user->id;
+                $user_film->save();
+
+                return redirect()->back()->with('success', 'Thêm phim yêu thích thành công');
+            } else {
+                // User chưa đăng nhập
+                // Xử lý tùy ý ở đây, ví dụ hiển thị thông báo lỗi
+                return redirect()->back()->with('error', 'Bạn cần đăng nhập để thêm phim yêu thích');
+            }
+
+        }
+    }
+
+    public
+    function showFilmFavorite($id)
+    {
+        $user = User::find($id);
+        $filmsView = Film::orderBy('views', 'desc')->take(8)->get();
+        $favoriteFilms = $user->films()->paginate(12);
+
+        return view("user.favoriteFilm", compact("favoriteFilms", 'filmsView'));
+    }
 }
