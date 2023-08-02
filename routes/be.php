@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CountryController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\FilmController;
 
 use \App\Http\Controllers\Admin\DashboardController;
@@ -11,6 +12,15 @@ use \App\Http\Controllers\Admin\DashboardController;
 
 Route::group(['prefix' => 'admin','middleware'=>'admin'], function () {
     Route::get('/', [DashboardController::class,'index'])->name('admin.dashboard');
+
+    Route::prefix('user')->group(function () {
+        Route::get('/', [UserController::class, 'list'])->name('admin.user.list');
+        Route::get('create', [UserController::class, 'create'])->name('admin.user.create');
+        Route::post('/do-create', [UserController::class, 'doCreate'])->name('admin.user.do-create');
+        Route::get('/edit/{id}', [UserController::class, 'edit'])->name('admin.user.edit');
+        Route::post('/do-edit/{id}', [UserController::class, 'doEdit'])->name('admin.user.do-edit');
+        Route::get('/delete/{id}', [UserController::class, 'delete'])->name('admin.user.delete');
+    });
 
     Route::prefix('category')->group(function () {
         Route::get('/', [CategoryController::class, 'list'])->name('admin.category.list');
