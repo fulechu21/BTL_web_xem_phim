@@ -1,18 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CountryController;
-use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\DirectorController;
+use App\Http\Controllers\Admin\ActorController;
 use App\Http\Controllers\Admin\FilmController;
-
 use \App\Http\Controllers\Admin\DashboardController;
 
 
 
 Route::group(['prefix' => 'admin','middleware'=>'admin'], function () {
     Route::get('/', [DashboardController::class,'index'])->name('admin.dashboard');
-
     Route::prefix('user')->group(function () {
         Route::get('/', [UserController::class, 'list'])->name('admin.user.list');
         Route::get('create', [UserController::class, 'create'])->name('admin.user.create');
@@ -40,14 +40,30 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function () {
         Route::get('/delete/{id}', [CountryController::class, 'delete'])->name('admin.country.delete');
     });
 
+    Route::prefix('director')->group(function () {
+        Route::get('/', [DirectorController::class, 'list'])->name('admin.director.list');
+        Route::get('create', [DirectorController::class, 'create'])->name('admin.director.create');
+        Route::post('/do-create', [DirectorController::class, 'doCreate'])->name('admin.director.do-create');
+        Route::get('/edit/{id}', [DirectorController::class, 'edit'])->name('admin.director.edit');
+        Route::post('/do-edit/{id}', [DirectorController::class, 'doEdit'])->name('admin.director.do-edit');
+        Route::get('/delete/{id}', [DirectorController::class, 'delete'])->name('admin.director.delete');
+    });
+
+    Route::prefix('actor')->group(function () {
+        Route::get('/', [ActorController::class, 'list'])->name('admin.actor.list');
+        Route::get('create', [ActorController::class, 'create'])->name('admin.actor.create');
+        Route::post('/do-create', [ActorController::class, 'doCreate'])->name('admin.actor.do-create');
+        Route::get('/edit/{id}', [ActorController::class, 'edit'])->name('admin.actor.edit');
+        Route::post('/do-edit/{id}', [ActorController::class, 'doEdit'])->name('admin.actor.do-edit');
+        Route::get('/delete/{id}', [ActorController::class, 'delete'])->name('admin.actor.delete');
+    });
     Route::prefix('film')->group(function () {
-        Route::get('/', [\App\Http\Controllers\Admin\FilmController::class, 'list'])->name('admin.film.list');
+       Route::get('/', [FilmController::class, 'list'])->name('admin.film.list');
         Route::get('create', [FilmController::class, 'create'])->name('admin.film.create');
         Route::post('/do-create', [FilmController::class, 'doCreate'])->name('admin.film.do-create');
         Route::get('/edit/{id}', [FilmController::class, 'edit'])->name('admin.film.edit');
         Route::post('/do-edit/{id}', [FilmController::class, 'doEdit'])->name('admin.film.do-edit');
         Route::get('/delete/{id}', [FilmController::class, 'delete'])->name('admin.film.delete');
     });
-
 });
 ?>
