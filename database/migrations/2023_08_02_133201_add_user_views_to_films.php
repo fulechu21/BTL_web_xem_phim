@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignKeyToFilms extends Migration
+class AddUserViewsToFilms extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,8 @@ class AddForeignKeyToFilms extends Migration
     public function up()
     {
         Schema::table('films', function (Blueprint $table) {
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
+            $table->integer('user_views')->after('views');
+
         });
     }
 
@@ -26,7 +27,7 @@ class AddForeignKeyToFilms extends Migration
     public function down()
     {
         Schema::table('films', function (Blueprint $table) {
-            $table->dropForeign(['country_id']);
+            $table->dropColumn('user_views');
         });
     }
 }

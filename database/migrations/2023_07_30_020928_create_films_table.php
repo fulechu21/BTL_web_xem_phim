@@ -21,12 +21,10 @@ class CreateFilmsTable extends Migration
             $table->string('path');
             $table->year('year');
             $table->unsignedBigInteger('country_id');
-            $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('director_id');
-            $table->unsignedBigInteger('actor_id');
             $table->unsignedBigInteger('views');
-            $table->binary('is_hot');
-            $table->binary('is_oscar');
+            $table->unsignedInteger('is_hot')->default(0);
+            $table->unsignedInteger('is_oscar')->default(0);
             $table->timestamps();
         });
     }

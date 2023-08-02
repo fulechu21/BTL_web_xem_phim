@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignKeyToFilms extends Migration
+class CreateWebsiteVisitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddForeignKeyToFilms extends Migration
      */
     public function up()
     {
-        Schema::table('films', function (Blueprint $table) {
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
+        Schema::create('website_visits', function (Blueprint $table) {
+            $table->id();
+            $table->date('date');
+            $table->integer('visits')->default(0);
+            $table->integer('unique_visits')->default(0);
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddForeignKeyToFilms extends Migration
      */
     public function down()
     {
-        Schema::table('films', function (Blueprint $table) {
-            $table->dropForeign(['country_id']);
-        });
+        Schema::dropIfExists('website_visits');
     }
 }
