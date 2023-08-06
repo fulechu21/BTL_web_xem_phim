@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 06, 2023 at 12:29 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Generation Time: Aug 06, 2023 at 01:04 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,10 +29,24 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `actors` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `actors`
+--
+
+INSERT INTO `actors` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Keanu Reeves', '2023-08-06 03:57:04', '2023-08-06 03:57:04'),
+(2, 'Laurence Fishburne', '2023-08-06 03:57:25', '2023-08-06 03:57:25'),
+(3, 'George FishBurne', '2023-08-06 03:57:39', '2023-08-06 03:57:39'),
+(4, 'Leonardo DiCaprio', '2023-08-06 03:57:57', '2023-08-06 03:57:57'),
+(5, 'Djimon Hounsou', '2023-08-06 03:58:11', '2023-08-06 03:58:11'),
+(6, 'Kagiso Kuypers', '2023-08-06 03:58:40', '2023-08-06 03:58:40'),
+(7, 'Ward Kerremans', '2023-08-06 03:58:49', '2023-08-06 03:58:49'),
+(8, 'Sallie Harmsen', '2023-08-06 03:58:59', '2023-08-06 03:58:59');
 
 -- --------------------------------------------------------
 
@@ -42,10 +56,24 @@ CREATE TABLE `actors` (
 
 CREATE TABLE `categories` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Hành động', '2023-08-06 03:59:33', '2023-08-06 03:59:33'),
+(2, 'Tình cảm', '2023-08-06 03:59:37', '2023-08-06 03:59:37'),
+(3, 'Viễn tưởng', '2023-08-06 03:59:45', '2023-08-06 03:59:45'),
+(4, 'Hài hước', '2023-08-06 03:59:52', '2023-08-06 03:59:52'),
+(5, 'Kinh dị', '2023-08-06 03:59:55', '2023-08-06 03:59:55'),
+(6, 'Hoạt hình', '2023-08-06 04:00:05', '2023-08-06 04:00:05'),
+(7, 'Cổ trang', '2023-08-06 04:00:09', '2023-08-06 04:00:09'),
+(8, 'Thần thoại', '2023-08-06 04:00:15', '2023-08-06 04:00:15');
 
 -- --------------------------------------------------------
 
@@ -55,10 +83,24 @@ CREATE TABLE `categories` (
 
 CREATE TABLE `countries` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `countries`
+--
+
+INSERT INTO `countries` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Hàn Quốc', '2023-08-06 04:01:08', '2023-08-06 04:01:08'),
+(2, 'Việt Nam', '2023-08-06 04:01:16', '2023-08-06 04:01:16'),
+(3, 'Trung Quốc', '2023-08-06 04:01:20', '2023-08-06 04:01:20'),
+(4, 'Nhật Bản', '2023-08-06 04:01:26', '2023-08-06 04:01:26'),
+(5, 'Thái Lan', '2023-08-06 04:01:33', '2023-08-06 04:01:33'),
+(6, 'Âu-Mỹ', '2023-08-06 04:01:43', '2023-08-06 04:01:43'),
+(7, 'Ấn Độ', '2023-08-06 04:01:50', '2023-08-06 04:01:50'),
+(8, 'Quốc gia khác', '2023-08-06 04:01:57', '2023-08-06 04:01:57');
 
 -- --------------------------------------------------------
 
@@ -68,10 +110,19 @@ CREATE TABLE `countries` (
 
 CREATE TABLE `directors` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `directors`
+--
+
+INSERT INTO `directors` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Gorõ Taniguchi', '2023-08-06 04:02:27', '2023-08-06 04:02:27'),
+(2, 'Edward Zwick', '2023-08-06 04:02:37', '2023-08-06 04:02:37'),
+(3, 'Steffen Geypens', '2023-08-06 04:02:48', '2023-08-06 04:02:48');
 
 -- --------------------------------------------------------
 
@@ -81,11 +132,11 @@ CREATE TABLE `directors` (
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) NOT NULL,
-  `connection` text NOT NULL,
-  `queue` text NOT NULL,
-  `payload` longtext NOT NULL,
-  `exception` longtext NOT NULL,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -97,10 +148,10 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `films` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `path` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `year` year(4) NOT NULL,
   `country_id` bigint(20) UNSIGNED NOT NULL,
   `director_id` bigint(20) UNSIGNED NOT NULL,
@@ -165,7 +216,7 @@ CREATE TABLE `film_views` (
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -204,8 +255,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -217,11 +268,11 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `token` varchar(64) NOT NULL,
-  `abilities` text DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -235,12 +286,12 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) NOT NULL,
-  `is_admin` varchar(255) NOT NULL DEFAULT '0',
-  `remember_token` varchar(100) DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `is_admin` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -397,25 +448,25 @@ ALTER TABLE `website_visits`
 -- AUTO_INCREMENT for table `actors`
 --
 ALTER TABLE `actors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `directors`
 --
 ALTER TABLE `directors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
