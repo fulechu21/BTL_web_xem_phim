@@ -58,7 +58,7 @@ Route::group(['prefix' => 'admin','middleware'=>'admin'], function () {
         Route::get('/delete/{id}', [ActorController::class, 'delete'])->name('admin.actor.delete');
     });
     Route::prefix('film')->group(function () {
-       Route::get('/', [FilmController::class, 'list'])->name('admin.film.list');
+        Route::get('/', [FilmController::class, 'list'])->name('admin.film.list');
         Route::get('create', [FilmController::class, 'create'])->name('admin.film.create');
         Route::post('/do-create', [FilmController::class, 'doCreate'])->name('admin.film.do-create');
         Route::get('/edit/{id}', [FilmController::class, 'edit'])->name('admin.film.edit');

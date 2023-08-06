@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ChangePasswordController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,14 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.index');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
-require __DIR__.'/fe.php';
-require __DIR__.'/be.php';
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+
+Route::get("/show-layout-change-password",[ChangePasswordController::class,"showLayoutChangePassword"])->name("show-change-password")->middleware(['auth']);
+
+Route::post("/change-password",[ChangePasswordController::class,"changePassword"])->name("change-password");
+
+Route::get("/register", "Auth\RegisteredUserController@showRegisterForm")->name('register');
+require __DIR__ . '/auth.php';
+require_once __DIR__ . '/fe.php';
+require_once __DIR__ . '/be.php';

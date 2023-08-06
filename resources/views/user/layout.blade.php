@@ -95,11 +95,14 @@
                                    data-toggle="dropdown">{{ auth()->user()->name }}</a>
                                 <ul class="dropdown-menu" style="width: 100px;position: absolute">
                                     <li><a id="password-reset"
-                                           href="{{route("show-change-password")}}">
+{{--                                           href="{{route("show-change-password")}}"--}}
+                                        >
                                             Đổi mật khẩu</a>
                                     </li>
 
-                                    <li><a href="{{route('user.showFilmFavorite',['id'=>auth()->user()->id])}}">Phim yêu thích</a></li>
+                                    <li><a
+{{--                                            href="{{route('user.showFilmFavorite',['id'=>auth()->user()->id])}}"--}}
+                                        >Phim yêu thích</a></li>
                                 </ul>
                             </div>
                         </li>

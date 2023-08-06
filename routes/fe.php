@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Models\Film;
 use Illuminate\Support\Facades\Route;
@@ -17,9 +16,6 @@ Route::prefix('/')->group(function () {
 
     Route::get('/play-movie/{id}', [\App\Http\Controllers\HomeController::class, 'playMovie'])->name("user.play-movie");
 
-    Route::post('/comments', [CommentController::class, "store"])->name('comments.store');
-    Route::get("/show-comments", [CommentController::class, "showComments"])->name('showComments');
-    Route::get('/load-more-commentes', [CommentController::class, "loadMoreComments"])->name('user.loadMoreComments');
 
     Route::get("show-favorite-film/{id}", [\App\Http\Controllers\Admin\FilmController::class, 'showFilmFavorite'])->name("user.showFilmFavorite");
     Route::post("/add_favorite", [\App\Http\Controllers\Admin\FilmController::class, "addFilmFavorite"])->name("addFavorite");
