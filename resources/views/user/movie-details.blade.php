@@ -87,12 +87,13 @@
                         <form method="POST" action="{{ route('addFavorite') }}">
                             @csrf
                             <input type="hidden" name="film_id" value="{{ $film->id }}">
-                            @if(auth()->check() && !auth()->user()->films()->wherePivot('film_id', $film->id)->exists())
+                            @if(auth()->check() && auth()->user()->films()->wherePivot('film_id', $film->id)->exists())
+                                <button class="favorite-btn" disabled>Đã thêm phim yêu thích</button>
+
+                            @else
                                 <button class="favorite-btn btn-info" data-film-id="{{ $film->id }}">Thêm vào yêu
                                     thích
                                 </button>
-                            @else
-                                <button class="favorite-btn" disabled>Đã thêm phim yêu thích</button>
                             @endif
                         </form>
 
@@ -110,50 +111,6 @@
                         </div>
                     </div>
                 </section>
-
-                <!-- start-comment -->
-                <div class="wrapper" style="background-color: white;">
-                    <div class="" style="margin: 0 30px">
-                        <form style="margin-bottom: 10px" method="POST" action="{{ route('comments.store') }}">
-                            @csrf
-                            <textarea class="nd-comments" placeholder="Viết bình luận ..." name="content"></textarea>
-                            <input type="hidden" name="film_id" value="{{ $film->id }}">
-                            <button class="btn-submit" type="submit">Submit</button>
-                        </form>
-                        <div id="commentsContainer" style="max-height: 500px;overflow-y: auto">
-                            @foreach($comments as $index => $comment)
-                                <div class="comment"
-                                     style="display: {{ $index < 5 ? 'flex' : 'none' }};margin-bottom: 15px; gap: 10px">
-                                    <div><img src="{{ asset('user/img/user.png') }}" alt="" width="30"></div>
-                                    <div>
-                                        <h5 class="text-primary"
-                                            style="font-weight: 600">{{ $comment->users->name }}</h5>
-                                        <p>{{ $comment->content }}</p>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-
-                        @if ($comments->count() > 5)
-                            <button id="showMoreBtn" class="btn-show-more" style="margin-bottom: 20px" onclick="showMoreComments()">Show more
-                            </button>
-                        @endif
-                    </div>
-                    <script !src="">
-                        function showMoreComments() {
-                            // Ẩn nút "Show more"
-                            document.getElementById('showMoreBtn').style.display = 'none';
-
-                            // Hiển thị tất cả các comment
-                            var comments = document.getElementsByClassName('comment');
-                            for (var i = 0; i < comments.length; i++) {
-                                comments[i].style.display = 'flex';
-                            }
-                        }
-                    </script>
-
-                </div>
-                <!-- end-comment -->
 
 
                 <section class="related-movies">
