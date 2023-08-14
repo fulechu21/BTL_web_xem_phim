@@ -44,10 +44,6 @@ class Film extends Model
     {
         return $this->belongsToMany(User::class, 'user_films', 'film_id', 'user_id');
     }
-    public function comments()
-    {
-        return $this->hasMany(Comment::class);
-    }
 
     public function filmviews()
     {
