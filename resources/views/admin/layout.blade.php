@@ -35,7 +35,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CineCast-Admin</title>
+    <title>PhimCu</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -90,9 +90,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="{{route('admin.dashboard')}}" class="brand-link">
-            <img src="{{asset('user/img/logo.png')}}" alt="CineCast Logo" class="brand-image elevation-3"
+            <img src="{{asset('user/img/logo.png')}}" alt="PhimCu Logo" class="brand-image elevation-3"
                  style="opacity: .8">
-            <span class="brand-text font-weight-light">CineCast-Admin</span>
+            <span class="brand-text font-weight-light">PhimCu-Admin</span>
         </a>
 
         <!-- Sidebar -->

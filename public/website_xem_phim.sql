@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 07, 2023 lúc 06:42 PM
--- Phiên bản máy phục vụ: 10.4.24-MariaDB
--- Phiên bản PHP: 8.1.6
+-- Host: 127.0.0.1
+-- Generation Time: Aug 15, 2023 at 09:48 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `website_xem_phim`
+-- Database: `website_xem_phim`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `actors`
+-- Table structure for table `actors`
 --
 
 CREATE TABLE `actors` (
@@ -35,7 +35,7 @@ CREATE TABLE `actors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `actors`
+-- Dumping data for table `actors`
 --
 
 INSERT INTO `actors` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -51,7 +51,7 @@ INSERT INTO `actors` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -62,7 +62,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -78,7 +78,7 @@ INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `countries`
+-- Table structure for table `countries`
 --
 
 CREATE TABLE `countries` (
@@ -89,7 +89,7 @@ CREATE TABLE `countries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `countries`
+-- Dumping data for table `countries`
 --
 
 INSERT INTO `countries` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -105,7 +105,7 @@ INSERT INTO `countries` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `directors`
+-- Table structure for table `directors`
 --
 
 CREATE TABLE `directors` (
@@ -116,7 +116,7 @@ CREATE TABLE `directors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `directors`
+-- Dumping data for table `directors`
 --
 
 INSERT INTO `directors` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -127,7 +127,7 @@ INSERT INTO `directors` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -143,7 +143,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `films`
+-- Table structure for table `films`
 --
 
 CREATE TABLE `films` (
@@ -165,32 +165,34 @@ CREATE TABLE `films` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `films`
+-- Dumping data for table `films`
 --
 
 INSERT INTO `films` (`id`, `name`, `description`, `image`, `path`, `year`, `country_id`, `director_id`, `duration`, `views`, `user_views`, `is_hot`, `is_oscar`, `created_at`, `updated_at`) VALUES
-(1, 'Kim Cương Máu', 'Phim Kim Cương Máu', 'kim_cuong_mau.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2006, 6, 2, 120, 0, 0, 1, 0, '2023-08-07 09:09:46', '2023-08-07 09:09:46'),
-(2, 'Tiếng Ồn', 'Phim Tiếng Ồn', 'tieng_on.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 6, 3, 120, 0, 0, 1, 0, '2023-08-07 09:12:56', '2023-08-07 09:12:56'),
-(3, 'XÁC ƯỚP CUỘC PHIÊU LƯU ĐẾN LONDON', 'Phim XÁC ƯỚP CUỘC PHIÊU LƯU ĐẾN LONDON', 'XÁC ƯỚP CUỘC PHIÊU LƯU ĐẾN LONDON.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 6, 2, 88, 0, 0, 1, 0, '2023-08-07 09:14:12', '2023-08-07 09:14:12'),
-(4, 'One Piece Film Red', 'Phim One Piece Film Red', 'p.png', 'https://www.youtube.com/embed/oACSq5w8xtk', 2002, 4, 1, 120, 0, 0, 0, 0, '2023-08-07 09:17:07', '2023-08-07 09:17:07'),
-(5, 'AVATAR: DÒNG CHẢY CỦA NƯỚC', 'Phim AVATAR: DÒNG CHẢY CỦA NƯỚC', 'avatar.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2022, 6, 2, 192, 0, 0, 1, 1, '2023-08-07 09:18:40', '2023-08-07 09:18:40'),
-(6, 'CON VOI CỦA NHÀ ẢO THUẬT', 'Phim CON VOI CỦA NHÀ ẢO THUẬT', 'con-voi-cua-nha-ao-thuat.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 7, 2, 103, 0, 0, 1, 0, '2023-08-07 09:19:48', '2023-08-07 09:19:48'),
-(7, 'KILL BOKSOON', 'Phim KILL BOKSOON', 'kill-boksoon.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2022, 1, 3, 137, 0, 0, 0, 1, '2023-08-07 09:21:30', '2023-08-07 09:21:30'),
-(8, 'TRI KỶ', 'Phim TRI KỶ', 'tri-ky.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 1, 2, 134, 0, 0, 1, 0, '2023-08-07 09:26:50', '2023-08-07 09:26:50'),
-(9, 'VICTORIA AND ABDUL: NỮ HOÀNG VÀ TRI KỶ', 'Phim VICTORIA AND ABDUL: NỮ HOÀNG VÀ TRI KỶ', 'victoria-and-abdul-nu-hoang-va-tri-ky.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2017, 6, 2, 100, 0, 0, 1, 1, '2023-08-07 09:29:25', '2023-08-07 09:29:25'),
-(10, 'GẤU POOH: MÁU VÀ MẬT', 'Phim GẤU POOH: MÁU VÀ MẬT', 'gau-pooh-mau-va-mat.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 8, 3, 84, 0, 0, 0, 1, '2023-08-07 09:31:29', '2023-08-07 09:31:29'),
-(11, 'SÚNG CỦA EDEN', 'Phim SÚNG CỦA EDEN', 'sung-cua-eden.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2022, 5, 1, 91, 0, 0, 0, 1, '2023-08-07 09:32:37', '2023-08-07 09:32:37'),
-(12, 'TÌNH BẠN', 'Phim TÌNH BẠN', 'tinh-ban.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2022, 3, 2, 104, 0, 0, 0, 1, '2023-08-07 09:33:29', '2023-08-07 09:33:29'),
-(13, 'MÊ CUNG LONG ẨN', 'Phim MÊ CUNG LONG ẨN', 'me-cung-long-an.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 7, 3, 63, 0, 0, 0, 0, '2023-08-07 09:35:33', '2023-08-07 09:35:33'),
-(14, 'THANH GƯƠM DIỆT QUỶ: DINH THỰ TSUZUMI', 'Phim THANH GƯƠM DIỆT QUỶ: DINH THỰ TSUZUMI', 'thanh-guom-diet-quy-dinh-thu-tsuzumi.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2020, 4, 1, 87, 0, 0, 1, 0, '2023-08-07 09:36:55', '2023-08-07 09:36:55'),
-(15, 'CHUYẾN XE BÁ ĐẠO 888', 'Phim CHUYẾN XE BÁ ĐẠO 888', 'chuyen-xe-ba-dao-888.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2016, 3, 2, 120, 0, 0, 0, 0, '2023-08-07 09:37:53', '2023-08-07 09:37:53'),
-(16, 'SỬ THI KOCHADAIIYAAN', 'Phim SỬ THI KOCHADAIIYAAN', 'su-thi-kochadaiiyaan.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2014, 4, 1, 90, 0, 0, 0, 0, '2023-08-07 09:39:06', '2023-08-07 09:39:06'),
-(17, 'GÁI GIÀ LẮM CHIÊU 2', 'Phim GÁI GIÀ LẮM CHIÊU 2', 'gai-gia-lam-chieu-2.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2018, 2, 3, 105, 0, 0, 0, 0, '2023-08-07 09:40:22', '2023-08-07 09:40:22');
+(1, 'Kim Cương Máu', 'Phim Kim Cương Máu', 'kim_cuong_mau.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2006, 6, 2, 120, 3, 2, 1, 0, '2023-08-07 09:09:46', '2023-08-15 00:38:50'),
+(2, 'Tiếng Ồn', 'Phim Tiếng Ồn', 'tieng_on.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 6, 3, 120, 1, 1, 1, 0, '2023-08-07 09:12:56', '2023-08-15 00:39:16'),
+(3, 'XÁC ƯỚP CUỘC PHIÊU LƯU ĐẾN LONDON', 'Phim XÁC ƯỚP CUỘC PHIÊU LƯU ĐẾN LONDON', 'XÁC ƯỚP CUỘC PHIÊU LƯU ĐẾN LONDON.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 6, 2, 88, 0, 0, 1, 0, '2023-08-07 09:14:12', '2023-08-15 00:39:31'),
+(4, 'One Piece Film Red', 'Phim One Piece Film Red', 'p.png', 'https://www.youtube.com/embed/oACSq5w8xtk', 2002, 4, 1, 120, 0, 0, 0, 1, '2023-08-07 09:17:07', '2023-08-15 00:39:51'),
+(5, 'AVATAR: DÒNG CHẢY CỦA NƯỚC', 'Phim AVATAR: DÒNG CHẢY CỦA NƯỚC', 'avatar.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2022, 6, 2, 192, 0, 0, 1, 1, '2023-08-07 09:18:40', '2023-08-15 00:40:11'),
+(6, 'CON VOI CỦA NHÀ ẢO THUẬT', 'Phim CON VOI CỦA NHÀ ẢO THUẬT', 'con-voi-cua-nha-ao-thuat.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 7, 2, 103, 1, 1, 1, 0, '2023-08-07 09:19:48', '2023-08-15 00:40:28'),
+(7, 'KILL BOKSOON', 'Phim KILL BOKSOON', 'kill-boksoon.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2022, 1, 3, 137, 0, 0, 0, 1, '2023-08-07 09:21:30', '2023-08-15 00:40:50'),
+(8, 'TRI KỶ', 'Phim TRI KỶ', 'tri-ky.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 1, 2, 134, 0, 0, 1, 0, '2023-08-07 09:26:50', '2023-08-15 00:41:07'),
+(9, 'VICTORIA AND ABDUL: NỮ HOÀNG VÀ TRI KỶ', 'Phim VICTORIA AND ABDUL: NỮ HOÀNG VÀ TRI KỶ', 'victoria-and-abdul-nu-hoang-va-tri-ky.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2017, 6, 2, 100, 0, 0, 1, 1, '2023-08-07 09:29:25', '2023-08-15 00:41:27'),
+(10, 'GẤU POOH: MÁU VÀ MẬT', 'Phim GẤU POOH: MÁU VÀ MẬT', 'gau-pooh-mau-va-mat.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 8, 3, 84, 0, 0, 0, 1, '2023-08-07 09:31:29', '2023-08-15 00:41:48'),
+(11, 'SÚNG CỦA EDEN', 'Phim SÚNG CỦA EDEN', 'sung-cua-eden.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2022, 5, 1, 91, 0, 0, 0, 1, '2023-08-07 09:32:37', '2023-08-15 00:42:06'),
+(12, 'TÌNH BẠN', 'Phim TÌNH BẠN', 'tinh-ban.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2022, 3, 2, 104, 0, 0, 0, 1, '2023-08-07 09:33:29', '2023-08-15 00:42:22'),
+(13, 'MÊ CUNG LONG ẨN', 'Phim MÊ CUNG LONG ẨN', 'me-cung-long-an.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 7, 3, 63, 0, 0, 0, 0, '2023-08-07 09:35:33', '2023-08-15 00:42:38'),
+(14, 'THANH GƯƠM DIỆT QUỶ: DINH THỰ TSUZUMI', 'Phim THANH GƯƠM DIỆT QUỶ: DINH THỰ TSUZUMI', 'thanh-guom-diet-quy-dinh-thu-tsuzumi.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2020, 4, 1, 87, 0, 0, 1, 0, '2023-08-07 09:36:55', '2023-08-15 00:43:10'),
+(15, 'CHUYẾN XE BÁ ĐẠO 888', 'Phim CHUYẾN XE BÁ ĐẠO 888', 'chuyen-xe-ba-dao-888.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2016, 3, 2, 120, 0, 0, 0, 0, '2023-08-07 09:37:53', '2023-08-15 00:43:50'),
+(16, 'SỬ THI KOCHADAIIYAAN', 'Phim SỬ THI KOCHADAIIYAAN', 'su-thi-kochadaiiyaan.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2014, 4, 1, 90, 0, 0, 0, 1, '2023-08-07 09:39:06', '2023-08-15 00:44:15'),
+(17, 'GÁI GIÀ LẮM CHIÊU 2', 'Phim GÁI GIÀ LẮM CHIÊU 2', 'gai-gia-lam-chieu-2.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2018, 2, 3, 105, 0, 0, 0, 0, '2023-08-07 09:40:22', '2023-08-15 00:44:30'),
+(18, 'Cá Mập Siêu Bạo Chúa 2: Vực Sâu', 'Cá Mập Siêu Bạo Chúa 2: Vực Sâu', 'ca_map_sieu_bao_chua.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 6, 2, 120, 0, 0, 0, 1, '2023-08-15 00:35:00', '2023-08-15 00:45:17'),
+(19, 'Người Nhện: Du Hành Vũ Trụ Nhện', 'Người Nhện: Du Hành Vũ Trụ Nhện', 'nguoi_nhen.jpg', 'https://www.youtube.com/embed/oACSq5w8xtk', 2023, 6, 3, 120, 0, 0, 1, 0, '2023-08-15 00:38:14', '2023-08-15 00:38:14');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `film_actors`
+-- Table structure for table `film_actors`
 --
 
 CREATE TABLE `film_actors` (
@@ -202,7 +204,7 @@ CREATE TABLE `film_actors` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `film_actors`
+-- Dumping data for table `film_actors`
 --
 
 INSERT INTO `film_actors` (`id`, `film_id`, `actor_id`, `created_at`, `updated_at`) VALUES
@@ -256,12 +258,20 @@ INSERT INTO `film_actors` (`id`, `film_id`, `actor_id`, `created_at`, `updated_a
 (48, 16, 8, NULL, NULL),
 (49, 17, 1, NULL, NULL),
 (50, 17, 7, NULL, NULL),
-(51, 17, 2, NULL, NULL);
+(51, 17, 2, NULL, NULL),
+(52, 18, 3, NULL, NULL),
+(53, 18, 5, NULL, NULL),
+(54, 18, 1, NULL, NULL),
+(55, 18, 4, NULL, NULL),
+(56, 18, 6, NULL, NULL),
+(57, 19, 2, NULL, NULL),
+(58, 19, 3, NULL, NULL),
+(59, 19, 5, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `film_categories`
+-- Table structure for table `film_categories`
 --
 
 CREATE TABLE `film_categories` (
@@ -272,10 +282,70 @@ CREATE TABLE `film_categories` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `film_categories`
+--
+
+INSERT INTO `film_categories` (`id`, `film_id`, `category_id`, `created_at`, `updated_at`) VALUES
+(1, 1, 2, NULL, NULL),
+(2, 19, 1, NULL, NULL),
+(3, 19, 3, NULL, NULL),
+(4, 19, 6, NULL, NULL),
+(5, 1, 1, NULL, NULL),
+(6, 1, 8, NULL, NULL),
+(7, 2, 1, NULL, NULL),
+(8, 2, 3, NULL, NULL),
+(9, 2, 5, NULL, NULL),
+(10, 3, 4, NULL, NULL),
+(11, 3, 6, NULL, NULL),
+(12, 4, 1, NULL, NULL),
+(13, 4, 3, NULL, NULL),
+(14, 4, 4, NULL, NULL),
+(15, 4, 6, NULL, NULL),
+(16, 5, 1, NULL, NULL),
+(17, 5, 3, NULL, NULL),
+(18, 6, 2, NULL, NULL),
+(19, 6, 4, NULL, NULL),
+(20, 6, 6, NULL, NULL),
+(21, 7, 1, NULL, NULL),
+(22, 8, 2, NULL, NULL),
+(23, 8, 4, NULL, NULL),
+(24, 9, 1, NULL, NULL),
+(25, 9, 2, NULL, NULL),
+(26, 9, 7, NULL, NULL),
+(27, 10, 1, NULL, NULL),
+(28, 10, 3, NULL, NULL),
+(29, 10, 5, NULL, NULL),
+(30, 10, 8, NULL, NULL),
+(31, 11, 1, NULL, NULL),
+(32, 11, 7, NULL, NULL),
+(33, 11, 8, NULL, NULL),
+(34, 12, 2, NULL, NULL),
+(35, 12, 4, NULL, NULL),
+(36, 13, 1, NULL, NULL),
+(37, 13, 3, NULL, NULL),
+(38, 13, 7, NULL, NULL),
+(39, 13, 8, NULL, NULL),
+(40, 14, 1, NULL, NULL),
+(41, 14, 3, NULL, NULL),
+(42, 14, 4, NULL, NULL),
+(43, 14, 6, NULL, NULL),
+(44, 14, 8, NULL, NULL),
+(45, 15, 1, NULL, NULL),
+(46, 15, 4, NULL, NULL),
+(47, 16, 1, NULL, NULL),
+(48, 16, 3, NULL, NULL),
+(49, 16, 7, NULL, NULL),
+(50, 16, 8, NULL, NULL),
+(51, 17, 2, NULL, NULL),
+(52, 17, 4, NULL, NULL),
+(53, 18, 1, NULL, NULL),
+(54, 18, 3, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `film_views`
+-- Table structure for table `film_views`
 --
 
 CREATE TABLE `film_views` (
@@ -288,10 +358,21 @@ CREATE TABLE `film_views` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `film_views`
+--
+
+INSERT INTO `film_views` (`id`, `film_id`, `date`, `views`, `unique_views`, `created_at`, `updated_at`) VALUES
+(1, 1, '2023-08-13', 2, 2, '2023-08-13 03:07:32', '2023-08-13 03:09:59'),
+(2, 2, '2023-08-14', 1, 1, '2023-08-14 09:54:00', '2023-08-14 09:54:00'),
+(3, 1, '2023-08-14', 3, 3, '2023-08-14 09:54:19', '2023-08-14 09:54:24'),
+(4, 6, '2023-08-15', 1, 1, '2023-08-14 21:39:55', '2023-08-14 21:39:55'),
+(5, 1, '2023-08-15', 1, 1, '2023-08-14 21:40:04', '2023-08-14 21:40:04');
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -301,7 +382,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -331,7 +412,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -340,10 +421,17 @@ CREATE TABLE `password_resets` (
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('mhoang2104@gmail.com', '$2y$10$SJ9ExNcFkpSG39fFXf.1mu4.tengun2s0lvX8oFSReZSU6ZFJ6y76', '2023-08-14 22:05:38');
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -361,7 +449,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -377,17 +465,18 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `is_admin`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Admin', 'Vuphamhp245@gmail.com', NULL, '$2y$10$1cq3E/PsxuzKmnS6WsWHBe0U8G40dk5jbA3vF8Tjkf4ChxCmgEuli', '1', NULL, '2023-08-06 03:08:21', '2023-08-06 03:08:21'),
-(2, 'User', 'phuduc0302@gmail.com', NULL, '$2y$10$yzNCrHaGbEOt6oJCEomIL.CjBM/SotKPCxtSA8k1vUFc9ukSBdjme', '0', NULL, '2023-08-06 03:13:40', '2023-08-06 03:13:40');
+(2, 'User', 'phuduc0302@gmail.com', NULL, '$2y$10$yzNCrHaGbEOt6oJCEomIL.CjBM/SotKPCxtSA8k1vUFc9ukSBdjme', '0', NULL, '2023-08-06 03:13:40', '2023-08-06 03:13:40'),
+(3, 'Bùi Vũ Minh Hoàng', 'mhoang2104@gmail.com', NULL, '$2y$10$JxyggsNtCywn/H39h1hfFuf/lVJU.ylKOKjjp/9ovkv2vGbCajqrq', '0', 'bkh8aSAGlIue3RvCRETdT4tXnhzaUKAd6PA7VHUFpnwuWVR5A8OQcSF04rC1', '2023-08-14 09:44:38', '2023-08-14 09:44:38');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user_films`
+-- Table structure for table `user_films`
 --
 
 CREATE TABLE `user_films` (
@@ -401,7 +490,7 @@ CREATE TABLE `user_films` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `website_visits`
+-- Table structure for table `website_visits`
 --
 
 CREATE TABLE `website_visits` (
@@ -414,49 +503,52 @@ CREATE TABLE `website_visits` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `website_visits`
+-- Dumping data for table `website_visits`
 --
 
 INSERT INTO `website_visits` (`id`, `date`, `visits`, `unique_visits`, `created_at`, `updated_at`) VALUES
-(1, '2023-08-07', 3, 1, '2023-08-07 08:55:26', '2023-08-07 09:40:51');
+(1, '2023-08-07', 3, 1, '2023-08-07 08:55:26', '2023-08-07 09:40:51'),
+(2, '2023-08-13', 8, 1, '2023-08-13 03:01:36', '2023-08-13 03:10:06'),
+(3, '2023-08-14', 16, 6, '2023-08-14 09:40:57', '2023-08-14 10:09:47'),
+(4, '2023-08-15', 12, 4, '2023-08-14 19:02:13', '2023-08-15 00:36:35');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `actors`
+-- Indexes for table `actors`
 --
 ALTER TABLE `actors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `categories`
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `countries`
+-- Indexes for table `countries`
 --
 ALTER TABLE `countries`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `directors`
+-- Indexes for table `directors`
 --
 ALTER TABLE `directors`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Chỉ mục cho bảng `films`
+-- Indexes for table `films`
 --
 ALTER TABLE `films`
   ADD PRIMARY KEY (`id`),
@@ -464,7 +556,7 @@ ALTER TABLE `films`
   ADD KEY `films_director_id_foreign` (`director_id`);
 
 --
--- Chỉ mục cho bảng `film_actors`
+-- Indexes for table `film_actors`
 --
 ALTER TABLE `film_actors`
   ADD PRIMARY KEY (`id`),
@@ -472,7 +564,7 @@ ALTER TABLE `film_actors`
   ADD KEY `film_actors_actor_id_foreign` (`actor_id`);
 
 --
--- Chỉ mục cho bảng `film_categories`
+-- Indexes for table `film_categories`
 --
 ALTER TABLE `film_categories`
   ADD PRIMARY KEY (`id`),
@@ -480,26 +572,26 @@ ALTER TABLE `film_categories`
   ADD KEY `film_categories_film_id_foreign` (`film_id`);
 
 --
--- Chỉ mục cho bảng `film_views`
+-- Indexes for table `film_views`
 --
 ALTER TABLE `film_views`
   ADD PRIMARY KEY (`id`),
   ADD KEY `film_views_film_id_foreign` (`film_id`);
 
 --
--- Chỉ mục cho bảng `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Chỉ mục cho bảng `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -507,14 +599,14 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Chỉ mục cho bảng `user_films`
+-- Indexes for table `user_films`
 --
 ALTER TABLE `user_films`
   ADD PRIMARY KEY (`id`),
@@ -522,132 +614,132 @@ ALTER TABLE `user_films`
   ADD KEY `user_films_user_id_foreign` (`user_id`);
 
 --
--- Chỉ mục cho bảng `website_visits`
+-- Indexes for table `website_visits`
 --
 ALTER TABLE `website_visits`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `actors`
+-- AUTO_INCREMENT for table `actors`
 --
 ALTER TABLE `actors`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT cho bảng `categories`
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT cho bảng `countries`
+-- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT cho bảng `directors`
+-- AUTO_INCREMENT for table `directors`
 --
 ALTER TABLE `directors`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `films`
+-- AUTO_INCREMENT for table `films`
 --
 ALTER TABLE `films`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT cho bảng `film_actors`
+-- AUTO_INCREMENT for table `film_actors`
 --
 ALTER TABLE `film_actors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
--- AUTO_INCREMENT cho bảng `film_categories`
+-- AUTO_INCREMENT for table `film_categories`
 --
 ALTER TABLE `film_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
--- AUTO_INCREMENT cho bảng `film_views`
+-- AUTO_INCREMENT for table `film_views`
 --
 ALTER TABLE `film_views`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT cho bảng `personal_access_tokens`
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `user_films`
+-- AUTO_INCREMENT for table `user_films`
 --
 ALTER TABLE `user_films`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `website_visits`
+-- AUTO_INCREMENT for table `website_visits`
 --
 ALTER TABLE `website_visits`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `films`
+-- Constraints for table `films`
 --
 ALTER TABLE `films`
   ADD CONSTRAINT `films_country_id_foreign` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `films_director_id_foreign` FOREIGN KEY (`director_id`) REFERENCES `directors` (`id`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `film_actors`
+-- Constraints for table `film_actors`
 --
 ALTER TABLE `film_actors`
   ADD CONSTRAINT `film_actors_actor_id_foreign` FOREIGN KEY (`actor_id`) REFERENCES `actors` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `film_actors_film_id_foreign` FOREIGN KEY (`film_id`) REFERENCES `films` (`id`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `film_categories`
+-- Constraints for table `film_categories`
 --
 ALTER TABLE `film_categories`
   ADD CONSTRAINT `film_categories_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `film_categories_film_id_foreign` FOREIGN KEY (`film_id`) REFERENCES `films` (`id`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `film_views`
+-- Constraints for table `film_views`
 --
 ALTER TABLE `film_views`
   ADD CONSTRAINT `film_views_film_id_foreign` FOREIGN KEY (`film_id`) REFERENCES `films` (`id`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `user_films`
+-- Constraints for table `user_films`
 --
 ALTER TABLE `user_films`
   ADD CONSTRAINT `user_films_film_id_foreign` FOREIGN KEY (`film_id`) REFERENCES `films` (`id`) ON DELETE CASCADE,
