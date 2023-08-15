@@ -59,7 +59,7 @@ class FilmController extends Controller
             }
             foreach ($categories_id as $category_id) {
                 $category = Category::find($category_id);
-                $film->actors()->attach($category);
+                $film->categories()->attach($category);
             }
         } catch (\Exception $exception) {
             return redirect()->back()->with('error', $exception->getMessage());
