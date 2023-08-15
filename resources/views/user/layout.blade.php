@@ -17,7 +17,7 @@
           type="image/x-icon"/>
     <meta name="revisit-after" content="1 days"/>
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'/>
-    <title>CineCast</title>
+    <title>PhimCu</title>
     <meta name="description"
           content="Phim hay 2021 - Xem phim hay nhất, xem phim online miễn phí, phim hot , phim nhanh"/>
     <link rel="canonical" href="">
