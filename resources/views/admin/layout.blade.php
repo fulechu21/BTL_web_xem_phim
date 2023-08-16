@@ -276,7 +276,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     var viewsChartCanvas = $('#viewChart').get(0).getContext('2d')
 
     var viewsChartData = {
-        labels  : ['May', 'June', 'July'],
+        labels  : ['June', 'July', 'August'],
         datasets: [
             {
                 label               : 'Unique Views',
@@ -339,7 +339,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     var visitsChartCanvas = $('#visitChart').get(0).getContext('2d')
 
     var visitsChartData = {
-        labels  : ['May', 'June', 'July'],
+        labels  : ['June', 'July', 'August'],
         datasets: [
             {
                 label               : 'Unique Visits',

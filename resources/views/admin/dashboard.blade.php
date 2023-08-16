@@ -63,8 +63,8 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-{{--                            <h3>{{$visitsToday->unique_visits}}</h3>--}}
-                            <h3>100</h3>
+                            <h3>{{$visitsToday->unique_visits}}</h3>
+
 
                             <p>Unique Visitors</p>
                         </div>
@@ -213,10 +213,9 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-{{--                                        <td>{{$visitsToday->visits}}</td>--}}
-{{--                                        <td>{{$visitsToday->unique_visits}}</td>--}}
-                                        <td>0</td>
-                                        <td>0</td>
+                                        <td>{{$visitsToday->visits}}</td>
+                                        <td>{{$visitsToday->unique_visits}}</td>
+
                                     </tr>
                                 </table>
 
